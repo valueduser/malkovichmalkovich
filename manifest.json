@@ -2,21 +2,27 @@
     "manifest_version": 2,
     "name": "Malkovich",
     "short_name": "Malkovich",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Malkovich malkovich, malkovich malkovich malkovich.",
     "browser_action": {
-        "default_icon": "icon16.png"
+        "default_icon": "imgs/icon16.png"
     },
-    "icons": {  "128" : "icon128.png",
-                "48"  : "icon48.png",
-                "16"  : "icon16.png"
+    "icons": {  "128" : "imgs/icon128.png",
+                "48"  : "imgs/icon48.png",
+                "16"  : "imgs/icon16.png"
     },
-    "content_scripts":
-    [
-        {
-            "matches": ["*://*/*"],
-            "js": ["content_script.js"],
-            "run_at": "document_end"
-        }
-    ]
+    "background":{
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "permissions": [
+        "activeTab"
+  ]
+  //   "content_scripts":[
+  //       {
+  //           "matches": ["*://*/*"],
+  //           "js": ["content_script.js"],
+  //           "run_at": "document_end"
+  //       }
+  //   ]
 }
